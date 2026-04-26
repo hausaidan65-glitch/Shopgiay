@@ -1,18 +1,20 @@
 <!doctype html>
 <html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <header class="header">
+    <div class="container header-row">
+      <div class="logo">Horizab</div>
 
-    <title>Horizab</title>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Inter&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-
+      <nav class="menu" id="menu">
+        <a href="#">Trang chủ</a>
+        <a href="#">Nam</a>
+        <a href="#">Nữ</a>
+        <a href="#">Trẻ em</a>
+        <a href="#">Khuyến mãi</a>
+      </nav>
+    </div>
+  </header>
   <body>
     <!-- HEADER -->
     <header class="header">
@@ -127,3 +129,8 @@
     </footer>
   </body>
 </html>
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+  }
+</script>
