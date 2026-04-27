@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="auth-body">
+    <div class="auth-container">
+      <div class="auth-box">
+        <!-- TOGGLE -->
+        <div class="auth-toggle">
+          <span id="btn-login" class="active">Đăng nhập</span>
+          <span id="btn-register">Đăng ký</span>
+        </div>
+
+        <!-- LOGIN -->
+        <div class="form login-form active">
+          <input id="l-user" placeholder="Tài khoản" />
+          <input id="l-pass" type="password" placeholder="Mật khẩu" />
+          <button onclick="login()">Đăng nhập</button>
+        </div>
+
+        <!-- REGISTER -->
+        <div class="form register-form">
+          <input id="r-user" placeholder="Tài khoản" />
+          <input id="r-pass" type="password" placeholder="Mật khẩu" />
+          <button onclick="register()">Đăng ký</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../data/app.js"></script>
+
+    <script>
+      const btnLogin = document.getElementById("btn-login");
+      const btnRegister = document.getElementById("btn-register");
+
+      const loginForm = document.querySelector(".login-form");
+      const registerForm = document.querySelector(".register-form");
+
+      btnLogin.onclick = () => {
+        loginForm.classList.add("active");
+        registerForm.classList.remove("active");
+
+        btnLogin.classList.add("active");
+        btnRegister.classList.remove("active");
+      };
+
+      btnRegister.onclick = () => {
+        registerForm.classList.add("active");
+        loginForm.classList.remove("active");
+
+        btnRegister.classList.add("active");
+        btnLogin.classList.remove("active");
+      };
+    </script>
+  </body>
+</html>

@@ -1,33 +1,29 @@
 <!doctype html>
 <html lang="vi">
-  <header class="header">
-    <div class="container header-row">
-      <div class="logo">Horizab</div>
-
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-      <nav class="menu" id="menu">
-        <a href="#">Trang chủ</a>
-        <a href="#">Nam</a>
-        <a href="#">Nữ</a>
-        <a href="#">Trẻ em</a>
-        <a href="#">Khuyến mãi</a>
-      </nav>
-    </div>
-  </header>
   <body>
-    <!-- HEADER -->
     <header class="header">
+      <link rel="stylesheet" href="styles.css" />
       <div class="container header-row">
         <div class="logo">Horizab</div>
 
-        <nav class="menu">
+        <div class="search-box">
+          <input type="text" placeholder="Tìm giày..." />
+        </div>
+
+        <nav class="menu" id="menu">
           <a href="#">Trang chủ</a>
           <a href="#">Nam</a>
           <a href="#">Nữ</a>
           <a href="#">Trẻ em</a>
           <a href="#">Khuyến mãi</a>
         </nav>
+
+       <div class="icons">
+  <span onclick="goCart()">🛒</span>
+  <span onclick="goLogin()">👤</span>
+</div>
+
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
       </div>
     </header>
     <!-- SẢN PHẨM -->
@@ -36,29 +32,48 @@
 
       <div class="product-grid">
         <div class="product">
-          <img src="images/r-1-143.png" />
+          <div class="product-img">
+            <img src="images/r-1-143.png" />
+            <div class="overlay">
+              <button onclick="viewDetail(1)">Xem chi tiết</button>
+            </div>
+          </div>
           <h4>Hunter X</h4>
           <p class="price">1.265.000 VND</p>
         </div>
 
         <div class="product">
-          <img src="images/r-220.png" />
-          <h4>Hunter Street</h4>
-          <p class="price">990.000 VND</p>
+          <div class="product-img">
+            <img src="images/r-220.png" />
+            <div class="overlay">
+              <button onclick="viewDetail(2)">Xem chi tiết</button>
+            </div>
+          </div>
+          <h4>Hunter Stress</h4>
+          <p class="price">999.000 VND</p>
         </div>
 
         <div class="product">
-          <img src="images/oip-187.png" />
-          <h4>Biti's</h4>
-          <p class="price">650.000 VND</p>
+          <div class="product-img">
+            <img src="images/oip-187.png" />
+            <div class="overlay">
+              <button onclick="viewDetail(3)">Xem chi tiết</button>
+            </div>
+          </div>
+          <h4>Hunter </h4>
+          <p class="price">1.876.000 VND</p>
         </div>
 
-        <div class="product">
-          <img src="images/oip-4-267.png" />
-          <h4>Dép Biti's</h4>
-          <p class="price">320.000 VND</p>
+       <div class="product">
+          <div class="product-img">
+            <img src="images/oip-4-267.png" />
+            <div class="overlay">
+              <button onclick="viewDetail(4)">Xem chi tiết</button>
+            </div>
+          </div>
+          <h4>Hunter </h4>
+          <p class="price">1.215.000 VND</p>
         </div>
-      </div>
     </section>
 
     <!-- BANNER -->
@@ -127,10 +142,18 @@
         </div>
       </div>
     </footer>
+    <script>
+      function toggleMenu() {
+        document.getElementById("menu").classList.toggle("active");
+      }
+      function goCart() {
+  window.location.href = "cart.html";
+}
+
+function goLogin() {
+  window.location.href = "login.html";
+}
+    </script>
+  <script src="data/app.js"></script>
   </body>
 </html>
-<script>
-  function toggleMenu() {
-    document.getElementById("menu").classList.toggle("active");
-  }
-</script>

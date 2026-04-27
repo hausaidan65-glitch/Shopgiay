@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Giỏ hàng của bạn</h2>
+
+      <div id="cart"></div>
+
+      <div class="cart-actions">
+        <button onclick="clearCart()">Xóa giỏ</button>
+        <button class="checkout">Thanh toán</button>
+      </div>
+    </div>
+
+    <script src="../data/app.js"></script>
+    <script>
+      renderCart();
+
+      function clearCart() {
+        localStorage.removeItem("cart");
+        renderCart();
+      }
+    </script>
+  </body>
+</html>
